@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BaseUiAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 51
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 51
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2e37f60f2823b2c45877c5714ef46a70, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1d9448802e6714748b6d1a82ff11005a, type: 3}
+  - {fileID: 21300000, guid: 1f53abc02192e2f4d96ce024f034dec1, type: 3}
+  - {fileID: 21300000, guid: bf16ef512e9a6c54aa85e98b5ad5bf3a, type: 3}
+  - {fileID: 21300000, guid: dccfab32ea9bad8478f5fa5598efd7ab, type: 3}
+  - {fileID: 21300000, guid: 5ce06b72aa092b046aa745d8415b91f1, type: 3}
+  - {fileID: 21300000, guid: 93bd66b217580124f824e770fff0c557, type: 3}
+  - {fileID: 21300000, guid: 4a7807f261b5d284ebee3a2069d1c560, type: 3}
+  - {fileID: 21300000, guid: 2586f673820c7a642b79efa2332e16e4, type: 3}
+  - {fileID: 21300000, guid: 83eda3f3ba53a4745a2977b9b83ec93c, type: 3}
+  - {fileID: 21300000, guid: 7d061f14dabfbb3428487177c5df1d27, type: 3}
+  - {fileID: 21300000, guid: 366e7264e94abd74b9707ef507251311, type: 3}
+  - {fileID: 21300000, guid: 2be9dcb45b97686478bfa91c74a45f45, type: 3}
+  - {fileID: 21300000, guid: e096ceb5afb7a80408805749c9c4e7a6, type: 3}
+  - {fileID: 21300000, guid: 311fc5e78e80099459d45aabe593dfb9, type: 3}
+  - {fileID: 21300000, guid: a268a70b3e9629d49b8abc828a58f6c2, type: 3}
+  - {fileID: 21300000, guid: f6079d2b9339fe944b4f61b416918caf, type: 3}
+  - {fileID: 21300000, guid: f3f9ca1ca99fd754ab339d0c064c5c35, type: 3}
+  - {fileID: 21300000, guid: 0e138f0d189896943aa8cd71a508403e, type: 3}
+  - {fileID: 21300000, guid: d878e33d35defef49a13cba7bf0665a5, type: 3}
+  - {fileID: 21300000, guid: c456955d3f8d29b4fb0bb908c5b70b0d, type: 3}
+  - {fileID: 21300000, guid: d725ef9eb7ab43b48b4dc01211d1b23b, type: 3}
+  - {fileID: 21300000, guid: 161932aece54c144897b35722aa50d5a, type: 3}
+  - {fileID: 21300000, guid: 3496673f5b1f79c4c8e5dfbf3bf5a35a, type: 3}
+  - {fileID: 21300000, guid: a680183f0c4458345875eb8fbe6a15f7, type: 3}
+  - {fileID: 21300000, guid: 77abff3f42b19494e980f31ed23b7bd4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "\u041B\u044E\u0431\u0438\u043C\u043E\u0435"
+  - hand
+  - emblem
+  - Rectangle 7
+  - "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C"
+  - Vector 1
+  - 1 screen
+  - c47bld9e0hs08c88s40cck84s 1
+  - name
+  - 3d button
+  - vr button (1)
+  - Rectangle 6
+  - Vector
+  - loupe
+  - "\u041F\u0440\u043E\u0444\u0438\u043B\u044C"
+  - button 1
+  - vr
+  - Rectangle 5
+  - avatar
+  - "\u042D\u043A\u0441\u043A\u0443\u0440\u0441\u0438\u0438"
+  - audio button
+  - info
+  - explore
+  - button 2
+  - c47bld9e0hs08c88s40cck84s 2
+  m_RenderDataMap: {}
+  m_Tag: BaseUiAtlas
+  m_IsVariant: 0
