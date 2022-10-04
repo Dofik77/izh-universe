@@ -9,6 +9,7 @@ public class MarkerData
     public string label;
     public string description;
     public string image_uri;
+    public int sprite;
 
     public MarkerData(double latitude, double longitude, int id = 0, string label = "", string description = "", string image_uri = "")
     {
