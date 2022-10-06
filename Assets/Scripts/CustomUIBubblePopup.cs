@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 public class CustomUIBubblePopup : MonoBehaviour
 {
-    public Canvas canvas;
-    public GameObject bubble;
-    public Text title;
-    public RawImage photo;
-    public Button button;
+    [SerializeField] public Canvas canvas;
+    [SerializeField] public GameObject bubble;
+    [SerializeField] public Text title;
+    [SerializeField] public RawImage photo;
+    [SerializeField] public Button button;
     [SerializeField] public List<MarkerData> datas;
-    public GameObject detailsPanel;
+    [SerializeField] public GameObject detailsPanel;
 
     private OnlineMapsMarker targetMarker;
 

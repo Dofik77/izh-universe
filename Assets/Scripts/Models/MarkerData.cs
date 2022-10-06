@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
+[Serializable]
 public class MarkerData
 {
     public int id;
@@ -10,7 +12,7 @@ public class MarkerData
     public string description;
     public string image_uri;
     public int sprite;
-
+    
     public MarkerData(double latitude, double longitude, int id = 0, string label = "", string description = "", string image_uri = "")
     {
         this.id = id;
