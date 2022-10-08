@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -35,7 +34,6 @@ public class CustomUIBubblePopup : MonoBehaviour
         detailsPanel.SetActive(true);
         PopupDetails popupDetails = GetComponent<PopupDetails>();
         popupDetails.FillFields(data);
-        Debug.Log($"{data.description}");
     }
 
     private void OnMarkerClick(OnlineMapsMarkerBase marker)
@@ -96,7 +94,6 @@ public class CustomUIBubblePopup : MonoBehaviour
 
     private void Start()
     {
-        // Subscribe to events of the map 
         OnlineMaps.instance.OnChangePosition += UpdateBubblePosition;
         OnlineMaps.instance.OnChangeZoom += UpdateBubblePosition;
         OnlineMapsControlBase.instance.OnMapClick += OnMapClick;
