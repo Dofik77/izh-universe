@@ -14,53 +14,64 @@ using UIScreenStateEnum = UIScreenStateClass.UIScreenStateEnum;
 public class UiStateMachine : MonoBehaviour
 {
     [Header("ScreenList")] 
-    [SerializeField] private List<ScreenWindow> screens;
+    [SerializeField] public List<ScreenWindow> screens = new List<ScreenWindow>();
     
     [Header("All Event Button")]
     [SerializeField] private Button historyButton;
     [SerializeField] private Button cityButton;
-    
-    [Header("All Screen")]
 
     [Header("Another Fields")] 
     [SerializeField] private float delayForTransition = 1.4f;
 
 
     private Stack<UIScreenStateEnum> stackScreenStateName = new Stack<UIScreenStateEnum>();
-    private UIScreenStateEnum prevScreenState;
-    private UIScreenStateEnum nextScreenName;
-
-    private void Start()
-    {
-        stackScreenStateName.Push(UIScreenStateEnum.startScreen);
-    }
-    
-    public void UpdateActualState(UIScreenStateEnum currentState, UIScreenStateEnum nextState)
-    {
-        if (currentState > stackScreenStateName.Pop()) 
-            NextScreen(currentState, nextState);
-        else 
-            BackScreen();
-    }
 
     public void NextScreen(UIScreenStateEnum currentState, UIScreenStateEnum nextState)
     {
         stackScreenStateName.Push(currentState);
         SwitchScreenTo(nextState);
+        DisableScreen(currentState);
     }
 
-    public void BackScreen()
+    public void BackScreen(UIScreenStateEnum currentState)
     {
         var screen = stackScreenStateName.Pop();
         SwitchScreenTo(screen);
+        DisableScreen(currentState);
     }
 
-    private void SwitchScreenTo(UIScreenStateEnum screenState)
+    public void SwitchScreenTo(UIScreenStateEnum screenState)
     {
         switch (screenState)
         {
+            case UIScreenStateEnum.LogoScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.LogoScreen).gameObject.SetActive(true);
+                break;
             
+            case UIScreenStateEnum.PhotoLogoScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.PhotoLogoScreen).gameObject.SetActive(true);
+                break;
+            
+            case UIScreenStateEnum.SubModelsMenu :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.SubModelsMenu).gameObject.SetActive(true);
+                break;
+                
+            case UIScreenStateEnum.MainMenuOnMap :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.MainMenuOnMap).gameObject.SetActive(true);
+                break;
+            
+            default: 
+                break;
         }
+    }
+
+    private void DisableScreen(UIScreenStateEnum disableScreen)
+    {
+        if(disableScreen == UIScreenStateEnum.ZeroState)
+            return;
+        
+        screens.Find(x =>
+            x.WindowState == disableScreen).gameObject.SetActive(false);
     }
     
 }
@@ -70,10 +81,11 @@ public class UiStateMachine : MonoBehaviour
         [Serializable]
         public enum UIScreenStateEnum
         {
-            startScreen,
-            smSoborScreen,
-            chooseScreen,
-            mainMenuScreen
+            ZeroState,
+            LogoScreen,
+            PhotoLogoScreen,
+            SubModelsMenu,
+            MainMenuOnMap,
         }
     }
     
