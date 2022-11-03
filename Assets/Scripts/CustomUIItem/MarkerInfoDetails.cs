@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopupDetails : MonoBehaviour
+public class MarkerInfoDetails : MonoBehaviour
 {
     public Text title;
     public Text description;

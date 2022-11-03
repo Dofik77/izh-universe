@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomMarkerManager : MonoBehaviour
+public class MarkerManager : MonoBehaviour
 {
     [SerializeField] private OnlineMapsMarkerManager markerManager;
-    [SerializeField] private CustomUIBubblePopup popup;
+    [SerializeField] private MarkerShirtDetails popup;
     [SerializeField, Tooltip("Markers")] private List<MarkerData> data;
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class CustomMarkerManager : MonoBehaviour
         };
 
         if (popup == null)
-            popup = GetComponent<CustomUIBubblePopup>();
+            popup = GetComponent<MarkerShirtDetails>();
 
         popup.datas = data;
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class CustomUIBubblePopup : MonoBehaviour
+public class MarkerShirtDetails : MonoBehaviour
 {
     [SerializeField] public Canvas canvas;
     [SerializeField] public GameObject bubble;
@@ -32,8 +32,8 @@ public class CustomUIBubblePopup : MonoBehaviour
     private void OnDetailsClick(MarkerData data)
     {
         detailsPanel.SetActive(true);
-        PopupDetails popupDetails = GetComponent<PopupDetails>();
-        popupDetails.FillFields(data);
+        MarkerInfoDetails markerInfoDetails = GetComponent<MarkerInfoDetails>();
+        markerInfoDetails.FillFields(data);
     }
 
     private void OnMarkerClick(OnlineMapsMarkerBase marker)
