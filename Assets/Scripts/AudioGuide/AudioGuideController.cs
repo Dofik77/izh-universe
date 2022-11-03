@@ -9,6 +9,15 @@ public class AudioGuideController : MonoBehaviour
     public Text playBtnText;
     public List<GuideAudioClip> audioClips;
     public Text trackName;
+    public Text chapterName;
+    public GameObject edgePrefab;
+    public float sliderWidth;
+    public float sliderHeigt;
+
+    private List<GuideTimecode> guideTimecodes;
+
+    private List<GameObject> edgeInstances;
+
 
     /// <summary>
     /// Событие, для отслеживания таймлайна аудиоресурса
@@ -32,6 +41,11 @@ public class AudioGuideController : MonoBehaviour
             instance = this;
 
         audioGuideSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        slider.GetComponent<RectTransform>().sizeDelta = new Vector2(sliderWidth, sliderHeigt);
     }
 
     /// <summary>
@@ -67,10 +81,16 @@ public class AudioGuideController : MonoBehaviour
     /// <param name="clipId">Id аудиодорожки</param>
     public void SetAudioClip(int clipId)
     {
-        audioGuideSource.clip = audioClips[clipId].audioClip;
-        SetTrackNameText(audioClips[clipId].audioClip);
+        var currentClip = audioClips[clipId];
+
+        guideTimecodes = currentClip.timecodes;
+
+        audioGuideSource.clip = currentClip.audioClip;
+        SetTrackNameText(currentClip.audioClip);
         SetSliderLenght();
         ResetTimeline();
+        DestroyEdges();
+        DrawTimecodes(guideTimecodes);
     }
 
     /// <summary>
@@ -129,12 +149,60 @@ public class AudioGuideController : MonoBehaviour
         trackName.text = clip.name;
     }
 
+    private void SetChapterNameText(List<GuideTimecode> guideTimecodes)
+    {
+        if (chapterName == null) return;
+
+        chapterName.text = guideTimecodes[0].title;
+
+        for (int i = 0; i < guideTimecodes.Count; i++)
+        {
+            if (slider.value >= guideTimecodes[i].start && slider.value < guideTimecodes[i].end)
+            {
+                chapterName.text = guideTimecodes[i].title;
+                break;
+            }
+        }        
+    }
+
+    private void DrawTimecodes(List<GuideTimecode> timecodes)
+    {
+        //Пока что хардкод
+        float takenSliderWidth = 0;
+        float segmentWidth;
+        int totalAudioDuration = timecodes[timecodes.Count - 1].end - timecodes[0].start;
+        for(int i = 0; i < timecodes.Count - 1; i++)
+        {
+            float xPosition = CalculateXPositionBySliderWidth(takenSliderWidth, timecodes[i].end - timecodes[i].start, totalAudioDuration, out segmentWidth);
+            var edgeInstance = Instantiate(edgePrefab, new Vector3(xPosition, 0, 0), Quaternion.identity);
+            edgeInstance.transform.SetParent(transform.GetChild(1), false);
+            takenSliderWidth += segmentWidth;
+            edgeInstances.Add(edgeInstance);
+        }
+    }
+
+    private void DestroyEdges()
+    {
+        if (edgeInstances == null)
+            return;
+
+        foreach (var edgeInstance in edgeInstances)
+            Destroy(edgeInstance);
+    }
+
+    private float CalculateXPositionBySliderWidth(float takenSliderWidth, int segmentDuration, int totalAudioDuration, out float segmentWidth)
+    {
+        segmentWidth = sliderWidth * segmentDuration / totalAudioDuration;
+        return (-sliderWidth / 2) + segmentWidth + takenSliderWidth;
+    }
+
     private void FixedUpdate()
     {
         if (OnAudioPlayed != null && !changingTime && IsAudioPlaying())
         {
             OnAudioPlayed(audioGuideSource.time);
-        }            
+        }
+        SetChapterNameText(guideTimecodes);
     }
 
 }
