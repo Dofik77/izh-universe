@@ -188,6 +188,8 @@ public class AudioGuideController : MonoBehaviour
 
         foreach (var edgeInstance in edgeInstances)
             Destroy(edgeInstance);
+        
+        edgeInstances.Clear();
     }
 
     private float CalculateXPositionBySliderWidth(float takenSliderWidth, int segmentDuration, int totalAudioDuration, out float segmentWidth)
