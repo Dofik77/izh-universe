@@ -16,7 +16,7 @@ public class AudioGuideController : MonoBehaviour
 
     private List<GuideTimecode> guideTimecodes;
 
-    private List<GameObject> edgeInstances;
+    private List<GameObject> edgeInstances = new List<GameObject>();
 
 
     /// <summary>
