@@ -3,6 +3,7 @@ using System;
 [Serializable]
 public class GuideTimecode
 {
-    public int timeInSeconds;
+    public int start;
+    public int end;
     public string title;
 }
