@@ -46,9 +46,7 @@ namespace DefaultNamespace
         }
 
         private void ChangeScreen(UIScreenStateEnum currentState, UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState)
-        {
-            Debug.Log("ScreenChanges");
-            
+        {   
             switch (buttonPurposeState)
             {
                 case ButtonPurposeState.Next :
