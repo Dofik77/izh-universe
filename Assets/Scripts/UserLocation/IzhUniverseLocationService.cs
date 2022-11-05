@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class IzhUniverseLocationService : MonoBehaviour
 {
-
     private OnlineMapsMarker userMarker;
 
     private void Start()
@@ -19,8 +18,12 @@ public class IzhUniverseLocationService : MonoBehaviour
 
         locationService.OnLocationChanged += OnLocationChanged;
         locationService.OnCompassChanged += OnCompassChanged;
+        
+        #if (UNITY_EDITOR)
+        userMarker.position = new Vector2(56.849894f, 53.223785f);
+        #endif
 
-        OnlineMaps.instance.SetPositionAndZoom(userMarker.position.x, userMarker.position.y, 17);
+        OnlineMaps.instance.SetPositionAndZoom(userMarker.position.x, userMarker.position.y, 12);
     }
 
     private void OnLocationChanged(Vector2 position)

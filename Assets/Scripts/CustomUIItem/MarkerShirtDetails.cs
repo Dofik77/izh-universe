@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class MarkerShirtDetails : MonoBehaviour
 {
-    [SerializeField] public Canvas canvas;
-    [SerializeField] public GameObject bubble;
-    [SerializeField] public Text title;
-    [SerializeField] public RawImage photo;
-    [SerializeField] public Button button;
-    [SerializeField] public List<MarkerData> datas;
-    [SerializeField] public GameObject detailsPanel;
+    [SerializeField] public Canvas MainCanvas;
+    [SerializeField] public GameObject MarkerShirt;
+    [SerializeField] public Text ShirtNameText;
+    [SerializeField] public RawImage ShirtPhoto;
+    [SerializeField] public Button ShirtButton;
+    [SerializeField] public List<MarkerData> MarkerDatas;
+    [SerializeField] public GameObject MarkerInfoDetails;
 
     private OnlineMapsMarker targetMarker;
 
@@ -19,39 +20,42 @@ public class MarkerShirtDetails : MonoBehaviour
         Texture2D texture = new Texture2D(1, 1);
         www.LoadImageIntoTexture(texture);
 
-        photo.texture = texture;
+        ShirtPhoto.texture = texture;
     }
 
     private void OnMapClick()
     {
         targetMarker = null;
-        button.onClick.RemoveAllListeners();
-        bubble.SetActive(false);
+        //ShirtButton.onClick.RemoveAllListeners();
+        MarkerShirt.SetActive(false);
     }
 
     private void OnDetailsClick(MarkerData data)
     {
-        detailsPanel.SetActive(true);
+        //MarkerInfoDetails.SetActive(true);
         MarkerInfoDetails markerInfoDetails = GetComponent<MarkerInfoDetails>();
         markerInfoDetails.FillFields(data);
+        MarkerShirt.SetActive(false);
+        
+        //re-write to GameApp logic fill data 
     }
 
     private void OnMarkerClick(OnlineMapsMarkerBase marker)
     {
-        button.onClick.RemoveAllListeners();
+        //ShirtButton.onClick.RemoveAllListeners();
         targetMarker = marker as OnlineMapsMarker;
 
         MarkerData data = marker["data"] as MarkerData;
         if (data == null) return;
-        bubble.SetActive(true);
-        title.text = data.label;
+        MarkerShirt.SetActive(true);
+        ShirtNameText.text = data.label;
 
-        button.onClick.AddListener(() => OnDetailsClick(data));
+        ShirtButton.onClick.AddListener(() => OnDetailsClick(data));
 
-        if (photo.texture != null)
+        if (ShirtPhoto.texture != null)
         {
-            OnlineMapsUtils.Destroy(photo.texture);
-            photo.texture = null;
+            OnlineMapsUtils.Destroy(ShirtPhoto.texture);
+            ShirtPhoto.texture = null;
         }
 
         OnlineMapsWWW www = new OnlineMapsWWW(data.image_uri);
@@ -68,9 +72,9 @@ public class MarkerShirtDetails : MonoBehaviour
         // Hide the popup if the marker is outside the map view
         if (!targetMarker.inMapView)
         {
-            if (bubble.activeSelf) bubble.SetActive(false);
+            if (MarkerShirt.activeSelf) MarkerShirt.SetActive(false);
         }
-        else if (!bubble.activeSelf) bubble.SetActive(true);
+        else if (!MarkerShirt.activeSelf) MarkerShirt.SetActive(true);
 
         // Convert the coordinates of the marker to the screen position.
         Vector2 screenPosition = OnlineMapsControlBase.instance.GetScreenPosition(targetMarker.position);
@@ -80,15 +84,15 @@ public class MarkerShirtDetails : MonoBehaviour
 
         // Get a local position inside the canvas.
         Vector2 point;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, screenPosition, null, out point);
-
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(MainCanvas.transform as RectTransform, screenPosition, null, out point);
+        
         // Set local position of the popup
-        (bubble.transform as RectTransform).localPosition = point;
+        (MarkerShirt.transform as RectTransform).localPosition = point;
     }
 
     public void AddRangeData(List<MarkerData> data)
     {
-        datas.AddRange(data);
+        MarkerDatas.AddRange(data);
     }
 
 
@@ -108,18 +112,17 @@ public class MarkerShirtDetails : MonoBehaviour
             OnlineMapsCameraOrbit.instance.OnCameraControl += UpdateBubblePosition;
         }
 
-        if (datas != null)
+        if (MarkerDatas != null)
         {
-            foreach (MarkerData data in datas)
+            foreach (MarkerData data in MarkerDatas)
             {
                 OnlineMapsMarker marker = OnlineMapsMarkerManager.CreateItem(data.longitude, data.latitude);
                 marker["data"] = data;
                 marker.OnClick += OnMarkerClick;
             }
         }
-
-
+        
         // Initial hide popup
-        bubble.SetActive(false);
+        MarkerShirt.SetActive(false);
     }
 }

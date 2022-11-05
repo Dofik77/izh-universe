@@ -3,13 +3,11 @@ using UnityEngine.UI;
 
 public class MarkerInfoDetails : MonoBehaviour
 {
-    public Text title;
-    public Text description;
-    public RawImage photo;
-    public Button closeBtn;
-    public Button audioGuideBtn;
-    public GameObject detailsPanel;
-    public GameObject audioPanel;
+    [SerializeField] public Text MarkerDetailsName;
+    [SerializeField] public Text Description;
+    [SerializeField] public RawImage Photo;
+    [SerializeField] public Button AudioGuideBtn;
+    [SerializeField] public GameObject AudioPanel;
 
     private int audioId;
 
@@ -18,18 +16,18 @@ public class MarkerInfoDetails : MonoBehaviour
         Texture2D texture = new Texture2D(1, 1);
         www.LoadImageIntoTexture(texture);
 
-        photo.texture = texture;
+        Photo.texture = texture;
     }
 
     public void FillFields(MarkerData data)
     {
-        title.text = data.label;
-        description.text = data.description;
+        MarkerDetailsName.text = data.label;
+        Description.text = data.description;
 
-        if (photo.texture != null)
+        if (Photo.texture != null)
         {
-            OnlineMapsUtils.Destroy(photo.texture);
-            photo.texture = null;
+            OnlineMapsUtils.Destroy(Photo.texture);
+            Photo.texture = null;
         }
 
         audioId = data.audioClipId;
@@ -37,21 +35,16 @@ public class MarkerInfoDetails : MonoBehaviour
         OnlineMapsWWW www = new OnlineMapsWWW(data.image_uri);
         www.OnComplete += OnDownloadPhotoComplete;
     }
-
-    private void CloseOnClick()
-    {
-        detailsPanel.SetActive(false);
-    }
-
+    
     private void SetupGuide()
     {
-        audioPanel.SetActive(true);
+        //AudioPanel.SetActive(true);
         AudioGuideController.instance.SetAudioClip(audioId);
     }
 
     void Start()
     {
-        closeBtn.onClick.AddListener(() => CloseOnClick());
-        audioGuideBtn.onClick.AddListener(() => SetupGuide());
+        //closeBtn.onClick.AddListener(() => CloseOnClick());
+        AudioGuideBtn.onClick.AddListener(() => SetupGuide());
     }
 }

@@ -15,10 +15,6 @@ public class UiStateMachine : MonoBehaviour
 {
     [Header("ScreenList")] 
     [SerializeField] public List<ScreenWindow> screens = new List<ScreenWindow>();
-    
-    [Header("All Event Button")]
-    [SerializeField] private Button historyButton;
-    [SerializeField] private Button cityButton;
 
     [Header("Another Fields")] 
     [SerializeField] private float delayForTransition = 1.4f;
@@ -52,13 +48,26 @@ public class UiStateMachine : MonoBehaviour
                 screens.Find(x => x.WindowState == UIScreenStateEnum.PhotoLogoScreen).gameObject.SetActive(true);
                 break;
             
-            case UIScreenStateEnum.SubModelsMenu :
-                screens.Find(x => x.WindowState == UIScreenStateEnum.SubModelsMenu).gameObject.SetActive(true);
+            case UIScreenStateEnum.SubModelsMenuScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.SubModelsMenuScreen).gameObject.SetActive(true);
                 break;
                 
-            case UIScreenStateEnum.MainMenuOnMap :
-                screens.Find(x => x.WindowState == UIScreenStateEnum.MainMenuOnMap).gameObject.SetActive(true);
+            case UIScreenStateEnum.MainMenuOnMapScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.MainMenuOnMapScreen).gameObject.SetActive(true);
                 break;
+            
+            case UIScreenStateEnum.ShirtDetailsScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.ShirtDetailsScreen).gameObject.SetActive(true);
+                break;
+            
+            case UIScreenStateEnum.AudioGuideScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.AudioGuideScreen).gameObject.SetActive(true);
+                break;
+            
+            case UIScreenStateEnum.ShowModelScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.ShowModelScreen).gameObject.SetActive(true);
+                break;
+            
             
             default: 
                 break;
@@ -84,8 +93,11 @@ public class UiStateMachine : MonoBehaviour
             ZeroState,
             LogoScreen,
             PhotoLogoScreen,
-            SubModelsMenu,
-            MainMenuOnMap,
+            SubModelsMenuScreen,
+            MainMenuOnMapScreen,
+            ShirtDetailsScreen,
+            AudioGuideScreen,
+            ShowModelScreen 
         }
     }
     

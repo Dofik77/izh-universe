@@ -27,6 +27,22 @@ namespace DefaultNamespace
             //uiStateMachine.NextScreen(UIScreenStateEnum.ZeroState, UIScreenStateEnum.SubModelsMenu);
         }
 
+
+        private void ChangeScreen(UIScreenStateEnum currentState, UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState)
+        {   
+            switch (buttonPurposeState)
+            {
+                case ButtonPurposeState.Next :
+                    uiStateMachine.NextScreen(currentState, NextState);
+                    break;
+                
+                case ButtonPurposeState.Back :
+                    uiStateMachine.BackScreen(currentState);
+                    break;
+            }
+        }
+        
+        
         private void ActivatedStartScreens(int screenCount)
         {
             for (int stateNumber = 1; stateNumber <= screenCount; stateNumber++)
@@ -43,20 +59,6 @@ namespace DefaultNamespace
             {
                 ChangeScreen(currentState, nextState, ButtonPurposeState.Next);
             });
-        }
-
-        private void ChangeScreen(UIScreenStateEnum currentState, UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState)
-        {   
-            switch (buttonPurposeState)
-            {
-                case ButtonPurposeState.Next :
-                    uiStateMachine.NextScreen(currentState, NextState);
-                    break;
-                
-                case ButtonPurposeState.Back :
-                    uiStateMachine.BackScreen(currentState);
-                    break;
-            }
         }
     }
 }

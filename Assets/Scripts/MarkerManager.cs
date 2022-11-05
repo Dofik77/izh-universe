@@ -24,7 +24,7 @@ public class MarkerManager : MonoBehaviour
         if (popup == null)
             popup = GetComponent<MarkerShirtDetails>();
 
-        popup.datas = data;
+        popup.MarkerDatas = data;
     }
     void Start()
     {

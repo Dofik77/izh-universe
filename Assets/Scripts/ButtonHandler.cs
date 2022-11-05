@@ -6,12 +6,6 @@ using ButtonPurposeState = ButtonPurpose.ButtonPurposeState;
 
 namespace DefaultNamespace
 {
-    
-    /// <summary>
-    /// сделать ивенты для события нажатия
-    /// StateMachine подписываеться на событие каждой кнопки
-    /// кнопка может как передавать 2 стейта, так и не передавать стеейты вовсе
-    /// </summary>
     public class ButtonHandler : MonoBehaviour
     {
         public event Action<UIScreenStateEnum, UIScreenStateEnum, ButtonPurposeState> OnButtonClick;
