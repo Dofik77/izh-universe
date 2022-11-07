@@ -4002,6 +4002,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984166750669047770}
+  - component: {fileID: 496423859035135329}
+  - component: {fileID: 496423859035135330}
   m_Layer: 0
   m_Name: zavod+most
   m_TagString: Untagged
@@ -4009,6 +4011,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &496423859035135329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496423859035135328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.122393, y: 46.439774, z: 104.121574}
+  m_Center: {x: -48.101013, y: 80.3051, z: -19.72122}
+--- !u!114 &496423859035135330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496423859035135328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc345218f140d14f9b613e5c2ad016d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
 --- !u!4 &553989964369765021
 Transform:
   m_ObjectHideFlags: 0
