@@ -23,6 +23,13 @@ public class MarkerShirtDetails : MonoBehaviour
         ShirtPhoto.texture = texture;
     }
 
+    /*private void OnMapDrag()
+    {
+        targetMarker = null;
+        //ShirtButton.onClick.RemoveAllListeners();
+        MarkerShirt.SetActive(false);
+    }*/
+
     private void OnMapClick()
     {
         targetMarker = null;
@@ -101,6 +108,7 @@ public class MarkerShirtDetails : MonoBehaviour
         OnlineMaps.instance.OnChangePosition += UpdateBubblePosition;
         OnlineMaps.instance.OnChangeZoom += UpdateBubblePosition;
         OnlineMapsControlBase.instance.OnMapClick += OnMapClick;
+        //SOnlineMapsControlBase.instance.OnMapDrag += OnMapDrag;
 
         if (OnlineMapsControlBaseDynamicMesh.instance != null)
         {
