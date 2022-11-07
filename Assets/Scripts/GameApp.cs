@@ -24,20 +24,20 @@ namespace DefaultNamespace
                 button.OnButtonClick += ChangeScreen;
 
             ActivatedStartScreens(3);
-            //uiStateMachine.NextScreen(UIScreenStateEnum.ZeroState, UIScreenStateEnum.SubModelsMenu);
         }
 
 
-        private void ChangeScreen(UIScreenStateEnum currentState, UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState)
+        private void ChangeScreen(UIScreenStateEnum currentState, 
+            UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState, bool mapNeedToBeActivated = false)
         {   
             switch (buttonPurposeState)
             {
                 case ButtonPurposeState.Next :
-                    uiStateMachine.NextScreen(currentState, NextState);
+                    uiStateMachine.NextScreen(currentState, NextState, mapNeedToBeActivated);
                     break;
                 
                 case ButtonPurposeState.Back :
-                    uiStateMachine.BackScreen(currentState);
+                    uiStateMachine.BackScreen(currentState, mapNeedToBeActivated);
                     break;
             }
         }

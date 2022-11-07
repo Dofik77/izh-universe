@@ -19,21 +19,29 @@ public class UiStateMachine : MonoBehaviour
     [Header("Another Fields")] 
     [SerializeField] private float delayForTransition = 1.4f;
 
+    [Header("Map")] [SerializeField] private OnlineMaps map;
+    
 
     private Stack<UIScreenStateEnum> stackScreenStateName = new Stack<UIScreenStateEnum>();
 
-    public void NextScreen(UIScreenStateEnum currentState, UIScreenStateEnum nextState)
+    public void NextScreen(UIScreenStateEnum currentState, UIScreenStateEnum nextState, bool activeMap)
     {
         stackScreenStateName.Push(currentState);
-        SwitchScreenTo(nextState);
         DisableScreen(currentState);
+        SwitchScreenTo(nextState);
+
+        if (activeMap)
+            MapNeedToBeActivated();
     }
 
-    public void BackScreen(UIScreenStateEnum currentState)
+    public void BackScreen(UIScreenStateEnum currentState, bool activeMap)
     {
         var screen = stackScreenStateName.Pop();
-        SwitchScreenTo(screen);
         DisableScreen(currentState);
+        SwitchScreenTo(screen);
+        
+        if (activeMap)
+            MapNeedToBeActivated();
     }
 
     public void SwitchScreenTo(UIScreenStateEnum screenState)
@@ -65,9 +73,9 @@ public class UiStateMachine : MonoBehaviour
                 break;
             
             case UIScreenStateEnum.ShowModelScreen :
+                map.gameObject.SetActive(false);
                 screens.Find(x => x.WindowState == UIScreenStateEnum.ShowModelScreen).gameObject.SetActive(true);
                 break;
-            
             
             default: 
                 break;
@@ -82,6 +90,8 @@ public class UiStateMachine : MonoBehaviour
         screens.Find(x =>
             x.WindowState == disableScreen).gameObject.SetActive(false);
     }
+
+    private void MapNeedToBeActivated() => map.gameObject.SetActive(true);
     
 }
     [Serializable]
@@ -97,7 +107,7 @@ public class UiStateMachine : MonoBehaviour
             MainMenuOnMapScreen,
             ShirtDetailsScreen,
             AudioGuideScreen,
-            ShowModelScreen 
+            ShowModelScreen
         }
     }
     

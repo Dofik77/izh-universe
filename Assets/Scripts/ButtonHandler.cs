@@ -8,19 +8,20 @@ namespace DefaultNamespace
 {
     public class ButtonHandler : MonoBehaviour
     {
-        public event Action<UIScreenStateEnum, UIScreenStateEnum, ButtonPurposeState> OnButtonClick;
+        public event Action<UIScreenStateEnum, UIScreenStateEnum, ButtonPurposeState, bool> OnButtonClick;
         
         [SerializeField] private UIScreenStateEnum currentState;
         [SerializeField] private UIScreenStateEnum nextState;
         [SerializeField] private ButtonPurposeState buttonPurposeState;
         [SerializeField] private Button thisButton;
+        [SerializeField] private bool mapNeedToBeActivated = false;
 
         private void Start()
         {
             thisButton.onClick.AddListener(OnClick);
         }
 
-        void OnClick() => OnButtonClick?.Invoke(currentState, nextState, buttonPurposeState);
+        void OnClick() => OnButtonClick?.Invoke(currentState, nextState, buttonPurposeState, mapNeedToBeActivated);
     }
 }
 
