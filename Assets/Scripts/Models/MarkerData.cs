@@ -11,8 +11,9 @@ public class MarkerData
     public string image_uri;
     public int sprite;
     public int audioClipId;
+    public int modelId;
     
-    public MarkerData(double latitude, double longitude, int audioClipId, int id = 0, string label = "", string description = "", string image_uri = "")
+    public MarkerData(double latitude, double longitude, int audioClipId, int modelId, int id = 0, string label = "", string description = "", string image_uri = "")
     {
         this.id = id;
         this.latitude = latitude;
@@ -21,5 +22,6 @@ public class MarkerData
         this.description = description;
         this.image_uri = image_uri;
         this.audioClipId = audioClipId;
+        this.modelId = modelId;
     }
 }

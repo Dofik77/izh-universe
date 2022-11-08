@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,13 +9,13 @@ public class MarkerManager : MonoBehaviour
     private void Awake()
     {
         data = new List<MarkerData>{
-            new MarkerData(56.8441905225239, 53.2011340885793, 0, 1,
+            new MarkerData(56.8441905225239, 53.2011340885793, 0, 1, 1,
                 "Marker 1", "Marker 1 - Description",
                 "https://i.ytimg.com/vi/WUqtMRXR3Bk/maxresdefault.jpg"),
-            new MarkerData(56.8496014366944, 53.2052574474073, 1, 2,
+            new MarkerData(56.8496014366944, 53.2052574474073, 1, 2, 2,
                 "Marker 2", "Marker 2 - Description",
                 "https://upload.wikimedia.org/wikipedia/commons/0/06/KFC_Home_Base.jpg"),
-            new MarkerData(56.8380977056658, 53.196849051651, 2, 3, 
+            new MarkerData(56.8380977056658, 53.196849051651, 2, 3, 3,
                 "Marker 3", "Marker 3 - Description", 
                 "https://pro-dachnikov.com/uploads/posts/2021-11/1637834930_45-pro-dachnikov-com-p-sakura-foto-46.jpg")
         };

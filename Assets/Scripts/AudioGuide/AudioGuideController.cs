@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ using UnityEngine.UI;
 public class AudioGuideController : MonoBehaviour
 {
     public Slider slider;
-    public Text playBtnText;
     public List<GuideAudioClip> audioClips;
     public Text trackName;
     public Text chapterName;
@@ -17,7 +17,6 @@ public class AudioGuideController : MonoBehaviour
     private List<GuideTimecode> guideTimecodes;
 
     private List<GameObject> edgeInstances = new List<GameObject>();
-
 
     /// <summary>
     /// Событие, для отслеживания таймлайна аудиоресурса
@@ -54,15 +53,9 @@ public class AudioGuideController : MonoBehaviour
     public void PlayButtonEvent()
     {
         if (!IsAudioPlaying())
-        {
-            audioGuideSource.Play();
-            playBtnText.text = "Pause";
-        }            
+            audioGuideSource.Play();    
         else
-        {
-            audioGuideSource.Pause();
-            playBtnText.text = "Play";
-        }            
+            audioGuideSource.Pause();        
     }
 
     /// <summary>
@@ -73,6 +66,17 @@ public class AudioGuideController : MonoBehaviour
         if(IsAudioPlaying())
             audioGuideSource.Stop();
         ResetTimeline();
+    }
+
+    public void RewindAudioGuide(int timeInSeconds)
+    {
+        if (audioGuideSource.time < Mathf.Abs(timeInSeconds))
+            audioGuideSource.time = 0;
+
+        if (audioGuideSource.time + timeInSeconds > audioGuideSource.clip.length)
+            audioGuideSource.time = audioGuideSource.clip.length;
+        else
+            audioGuideSource.time += timeInSeconds;
     }
 
     /// <summary>

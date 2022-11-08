@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,6 +24,7 @@ public class SliderTimeline : MonoBehaviour, IPointerUpHandler, IPointerDownHand
     public void OnPointerUp(PointerEventData eventData)
     {
         audioController.SetTimeline(slider.value);
+        audioController.OnAudioPlayed += OnAudioPlayed;
         audioController.SetChangingTime(false);
         ((IPointerUpHandler)slider).OnPointerUp(eventData);        
     }
@@ -30,6 +32,7 @@ public class SliderTimeline : MonoBehaviour, IPointerUpHandler, IPointerDownHand
     public void OnPointerDown(PointerEventData eventData)
     {
         audioController.SetChangingTime(true);
+        audioController.OnAudioPlayed -= OnAudioPlayed;
         ((IPointerDownHandler)slider).OnPointerDown(eventData);        
     }
 }

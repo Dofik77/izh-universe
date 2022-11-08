@@ -1,3 +1,5 @@
+using Assets.Scripts;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,9 @@ public class MarkerInfoDetails : MonoBehaviour
     [SerializeField] public GameObject AudioPanel;
 
     private int audioId;
+    private ArgumentsHandler<MarkerData> argumentsHandler;
+    private ArgumentsHandler<int> argumentsHandler2;
+    private MarkerData lastMarkerData;
 
     private void OnDownloadPhotoComplete(OnlineMapsWWW www)
     {
@@ -38,13 +43,22 @@ public class MarkerInfoDetails : MonoBehaviour
     
     private void SetupGuide()
     {
-        //AudioPanel.SetActive(true);
         AudioGuideController.instance.SetAudioClip(audioId);
     }
 
     void Start()
     {
+        argumentsHandler = ArgumentsHandler<MarkerData>.GetInstance();
         //closeBtn.onClick.AddListener(() => CloseOnClick());
         AudioGuideBtn.onClick.AddListener(() => SetupGuide());
+    }
+
+    private void Update()
+    {
+        if(argumentsHandler.GetArgs() != lastMarkerData)
+        {
+            FillFields(argumentsHandler.GetArgs());
+            lastMarkerData = argumentsHandler.GetArgs();
+        }
     }
 }

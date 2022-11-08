@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using Assets.Scripts;
 
 public class MarkerShirtDetails : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class MarkerShirtDetails : MonoBehaviour
     [SerializeField] public GameObject MarkerInfoDetails;
 
     private OnlineMapsMarker targetMarker;
+    private ArgumentsHandler<MarkerData> argumentsHandler;
 
     private void OnDownloadPhotoComplete(OnlineMapsWWW www)
     {
@@ -22,13 +24,6 @@ public class MarkerShirtDetails : MonoBehaviour
 
         ShirtPhoto.texture = texture;
     }
-
-    /*private void OnMapDrag()
-    {
-        targetMarker = null;
-        //ShirtButton.onClick.RemoveAllListeners();
-        MarkerShirt.SetActive(false);
-    }*/
 
     private void OnMapClick()
     {
@@ -39,9 +34,7 @@ public class MarkerShirtDetails : MonoBehaviour
 
     private void OnDetailsClick(MarkerData data)
     {
-        //MarkerInfoDetails.SetActive(true);
-        MarkerInfoDetails markerInfoDetails = GetComponent<MarkerInfoDetails>();
-        markerInfoDetails.FillFields(data);
+        argumentsHandler.SetArgs(data);
         MarkerShirt.SetActive(false);
         
         //re-write to GameApp logic fill data 
@@ -108,7 +101,8 @@ public class MarkerShirtDetails : MonoBehaviour
         OnlineMaps.instance.OnChangePosition += UpdateBubblePosition;
         OnlineMaps.instance.OnChangeZoom += UpdateBubblePosition;
         OnlineMapsControlBase.instance.OnMapClick += OnMapClick;
-        //SOnlineMapsControlBase.instance.OnMapDrag += OnMapDrag;
+
+        argumentsHandler = ArgumentsHandler<MarkerData>.GetInstance();
 
         if (OnlineMapsControlBaseDynamicMesh.instance != null)
         {
