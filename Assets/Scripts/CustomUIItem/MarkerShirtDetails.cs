@@ -13,6 +13,7 @@ public class MarkerShirtDetails : MonoBehaviour
     [SerializeField] public Button ShirtButton;
     [SerializeField] public List<MarkerData> MarkerDatas;
     [SerializeField] public GameObject MarkerInfoDetails;
+    [SerializeField] private int yOffset = 10;
 
     private OnlineMapsMarker targetMarker;
     private ArgumentsHandler<MarkerData> argumentsHandler;
@@ -85,6 +86,7 @@ public class MarkerShirtDetails : MonoBehaviour
         // Get a local position inside the canvas.
         Vector2 point;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(MainCanvas.transform as RectTransform, screenPosition, null, out point);
+        point.y += yOffset;
         
         // Set local position of the popup
         (MarkerShirt.transform as RectTransform).localPosition = point;

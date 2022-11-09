@@ -740,7 +740,6 @@ GameObject:
   - component: {fileID: 532925376}
   - component: {fileID: 532925377}
   - component: {fileID: 532925379}
-  - component: {fileID: 532925378}
   m_Layer: 3
   m_Name: Map
   m_TagString: Untagged
@@ -1021,23 +1020,6 @@ MonoBehaviour:
   markerManager: {fileID: 532925374}
   popup: {fileID: 532925379}
   data: []
---- !u!114 &532925378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532925365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f28d8f78e318142b15d4e34acb737b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkerDetailsName: {fileID: 851244076}
-  Description: {fileID: 218772390}
-  Photo: {fileID: 566977673}
-  AudioGuideBtn: {fileID: 1060796391}
-  AudioPanel: {fileID: 0}
 --- !u!114 &532925379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1039,7 @@ MonoBehaviour:
   ShirtButton: {fileID: 4888240805518120171}
   MarkerDatas: []
   MarkerInfoDetails: {fileID: 0}
+  yOffset: 20
 --- !u!114 &552108101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2527112422682508200, guid: 568bd06593338884b8ad5d972be598b8, type: 3}
