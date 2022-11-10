@@ -953,7 +953,7 @@ MonoBehaviour:
   resourcesPath: OnlineMapsTiles/{zoom}/{x}/{y}
   streamingAssetsPath: OnlineMapsTiles/{zoom}/{x}/{y}.png
   showMarkerTooltip: 0
-  source: 0
+  source: 1
   stopPlayingWhenScriptsCompile: 1
   texture: {fileID: 2800000, guid: 2750a337c9852b744a8a9669cae51a33, type: 3}
   tooltipBackgroundTexture: {fileID: 2800000, guid: a8d1734e646100c4e83635fecf978e15, type: 3}

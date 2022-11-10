@@ -67,6 +67,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1f53abc02192e2f4d96ce024f034dec1, type: 3}
   - {fileID: 21300000, guid: bf16ef512e9a6c54aa85e98b5ad5bf3a, type: 3}
   - {fileID: 21300000, guid: 6dd8a2d18bc800b47b50d853b88e2fe7, type: 3}
+  - {fileID: 21300000, guid: 296502f158d72c4488a9047d6ab6fe31, type: 3}
   - {fileID: 21300000, guid: dccfab32ea9bad8478f5fa5598efd7ab, type: 3}
   - {fileID: 21300000, guid: 15fb3b62d8f4ae644a40cd3a89fc07f4, type: 3}
   - {fileID: 21300000, guid: eb516872ef235f049af0f09f286ef0ac, type: 3}
@@ -76,18 +77,24 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d26131239339cbf41be9bc5164d21fa9, type: 3}
   - {fileID: 21300000, guid: cb648373544ec0645a66d0fa885b4da5, type: 3}
   - {fileID: 21300000, guid: 2586f673820c7a642b79efa2332e16e4, type: 3}
+  - {fileID: 21300000, guid: 1bf002b32bebd9248bf2f95a5391bd3b, type: 3}
   - {fileID: 21300000, guid: 83eda3f3ba53a4745a2977b9b83ec93c, type: 3}
   - {fileID: 21300000, guid: 7d061f14dabfbb3428487177c5df1d27, type: 3}
-  - {fileID: 21300000, guid: 366e7264e94abd74b9707ef507251311, type: 3}
+  - {fileID: 21300000, guid: fde1a1b42a51655459a5a760115a1928, type: 3}
   - {fileID: 21300000, guid: 2be9dcb45b97686478bfa91c74a45f45, type: 3}
   - {fileID: 21300000, guid: e096ceb5afb7a80408805749c9c4e7a6, type: 3}
+  - {fileID: 21300000, guid: 2e5465f608324404c97b2be22dcf5143, type: 3}
+  - {fileID: 21300000, guid: 114e4b47011acd84fbabe2af616c7b4a, type: 3}
   - {fileID: 21300000, guid: 311fc5e78e80099459d45aabe593dfb9, type: 3}
   - {fileID: 21300000, guid: 318c89783de340c4d90c5fef0849f0d1, type: 3}
+  - {fileID: 21300000, guid: bf93cd9820b124c488b8142c40d12c04, type: 3}
+  - {fileID: 21300000, guid: f1dec07905308e540bba534b866a33a2, type: 3}
   - {fileID: 21300000, guid: f38859c906baae14d98078df338d57ad, type: 3}
   - {fileID: 21300000, guid: 221e6fbaf6b7b6440a42e368ec59d59f, type: 3}
   - {fileID: 21300000, guid: a268a70b3e9629d49b8abc828a58f6c2, type: 3}
   - {fileID: 21300000, guid: f6079d2b9339fe944b4f61b416918caf, type: 3}
   - {fileID: 21300000, guid: f3f9ca1ca99fd754ab339d0c064c5c35, type: 3}
+  - {fileID: 21300000, guid: bc5771ec2823feb47a11b43b11acc486, type: 3}
   - {fileID: 21300000, guid: 0e138f0d189896943aa8cd71a508403e, type: 3}
   - {fileID: 21300000, guid: d878e33d35defef49a13cba7bf0665a5, type: 3}
   - {fileID: 21300000, guid: c456955d3f8d29b4fb0bb908c5b70b0d, type: 3}
@@ -95,10 +102,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 914ce38d1be660344a1867f5369a84d9, type: 3}
   - {fileID: 21300000, guid: 005e4f8d168b48741902d8b74e0b1ce9, type: 3}
   - {fileID: 21300000, guid: a8138ffd3eccead43a56d01b57cbe70c, type: 3}
+  - {fileID: 21300000, guid: 73cb106e253074b44803b804f6d821bb, type: 3}
   - {fileID: 21300000, guid: e277546e4db62e948801ce4d07122db2, type: 3}
   - {fileID: 21300000, guid: d710c66e2c633284d9530b6de911a8c2, type: 3}
   - {fileID: 21300000, guid: d725ef9eb7ab43b48b4dc01211d1b23b, type: 3}
   - {fileID: 21300000, guid: 161932aece54c144897b35722aa50d5a, type: 3}
+  - {fileID: 21300000, guid: 5b511b0fe1a948d41a647ea9af26e9a5, type: 3}
   - {fileID: 21300000, guid: 87c05f1f7f79995449548b4ace9c3d5a, type: 3}
   - {fileID: 21300000, guid: 3496673f5b1f79c4c8e5dfbf3bf5a35a, type: 3}
   - {fileID: 21300000, guid: a680183f0c4458345875eb8fbe6a15f7, type: 3}
@@ -111,6 +120,7 @@ SpriteAtlas:
   - hand(black)
   - MainLogo
   - "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C 1"
+  - c47bld9e0hs08c88s40cck84s 2
   - Rectangle 7
   - BestChoice(white)
   - avatar
@@ -120,18 +130,26 @@ SpriteAtlas:
   - Best(white)
   - Group 56
   - SvytoMich
+  - vr button
   - name
   - Search3DModelSprite
-  - vr button (1)
+  - audio button
   - Rectangle 6
   - BestChoice(black)
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation
+  - history 3
   - search(black)
   - recommendations
+  - "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435"
+  - Rectangle 10
   - Group 55
   - heart
   - Profile(black)
   - IzhHistoryButton
   - vrButton(black)
+  - 3d button
   - Rectangle white
   - Avatar(Black)
   - "\u042D\u043A\u0441\u043A\u0443\u0440\u0441\u0438\u0438"
@@ -139,10 +157,12 @@ SpriteAtlas:
   - compass
   - Vector
   - explore(white)
+  - Rectangle 9
   - Group 54
   - Avatar(White)
   - ListenAudioButtonSprite
   - info(black)
+  - slider
   - Group 53
   - explore(black)
   - IzhLiveButton
