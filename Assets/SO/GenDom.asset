@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426b1ced865e55942adb38cf5fd48cf3, type: 3}
+  m_Name: GenDom
+  m_EditorClassIdentifier: 
+  Photo: {fileID: 2800000, guid: 82e6c996a23e9d54b9cfa3d8ed7d996b, type: 3}
+  ShirtPhoto: {fileID: 2800000, guid: 5a5cf3cbb5a7aa944acab48a24b5f827, type: 3}

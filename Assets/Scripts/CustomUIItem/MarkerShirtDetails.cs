@@ -52,15 +52,17 @@ public class MarkerShirtDetails : MonoBehaviour
         ShirtNameText.text = data.label;
 
         ShirtButton.onClick.AddListener(() => OnDetailsClick(data));
-
+        
         if (ShirtPhoto.texture != null)
         {
             OnlineMapsUtils.Destroy(ShirtPhoto.texture);
             ShirtPhoto.texture = null;
         }
 
-        OnlineMapsWWW www = new OnlineMapsWWW(data.image_uri);
-        www.OnComplete += OnDownloadPhotoComplete;
+        ShirtPhoto.texture = data.SO.ShirtPhoto;
+        
+        // OnlineMapsWWW www = new OnlineMapsWWW(data.);
+        // www.OnComplete += OnDownloadPhotoComplete;
 
         UpdateBubblePosition();
     }

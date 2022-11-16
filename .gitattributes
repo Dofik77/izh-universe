@@ -1,3 +1,4 @@
 *.fbx
 *.obj
 Gendom_u1_v1.png filter=lfs diff=lfs merge=lfs -text
+*Gendom_u1_v1.png filter=lfs diff=lfs merge=lfs -text

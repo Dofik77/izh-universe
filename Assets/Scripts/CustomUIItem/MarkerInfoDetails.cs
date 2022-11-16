@@ -13,7 +13,7 @@ public class MarkerInfoDetails : MonoBehaviour
 
     private int audioId;
     private ArgumentsHandler<MarkerData> argumentsHandler;
-    private ArgumentsHandler<int> argumentsHandler2;
+    private ArgumentsHandler<int> argumentsHandlerModelData;
     private MarkerData lastMarkerData;
 
     private void OnDownloadPhotoComplete(OnlineMapsWWW www)
@@ -35,10 +35,14 @@ public class MarkerInfoDetails : MonoBehaviour
             Photo.texture = null;
         }
 
-        audioId = data.audioClipId;
+        Photo.texture = data.SO.Photo;
 
-        OnlineMapsWWW www = new OnlineMapsWWW(data.image_uri);
-        www.OnComplete += OnDownloadPhotoComplete;
+        audioId = data.audioClipId;
+        
+        argumentsHandlerModelData.SetArgs(data.modelId);
+
+        // OnlineMapsWWW www = new OnlineMapsWWW(data.image_uri);
+        // www.OnComplete += OnDownloadPhotoComplete;
     }
     
     private void SetupGuide()
@@ -48,6 +52,7 @@ public class MarkerInfoDetails : MonoBehaviour
 
     void Start()
     {
+        argumentsHandlerModelData = ArgumentsHandler<int>.GetInstance();
         argumentsHandler = ArgumentsHandler<MarkerData>.GetInstance();
         //closeBtn.onClick.AddListener(() => CloseOnClick());
         AudioGuideBtn.onClick.AddListener(() => SetupGuide());

@@ -7,23 +7,18 @@ public class MarkerManager : MonoBehaviour
     [SerializeField] private OnlineMapsMarkerManager markerManager;
     [SerializeField] private MarkerShirtDetails popup;
     [SerializeField, Tooltip("Markers")] private List<MarkerData> data;
+    [SerializeField] private List<PhotoSO> photoData;
+
+
     private void Awake()
     {
         MarkerDataSharedDescription description = new MarkerDataSharedDescription();
 
         data = new List<MarkerData>{
-            new MarkerData(53.191212, 56.843837, 2, 1, 1,
-                "Главный корпус оружейного завода", description.main_corp,
-                "https://i.ytimg.com/vi/WUqtMRXR3Bk/maxresdefault.jpg"),
-            new MarkerData(53.197900, 56.846705, 1, 2, 2,
-                "Генеральский дом", description.general_house,
-                "https://upload.wikimedia.org/wikipedia/commons/0/06/KFC_Home_Base.jpg"),
-            new MarkerData(53.198576, 56.844027, 0, 3, 3,
-                "Михайловская колонна", description.column, 
-                "https://pro-dachnikov.com/uploads/posts/2021-11/1637834930_45-pro-dachnikov-com-p-sakura-foto-46.jpg"),
-            new MarkerData(53.198057, 56.843916, 3, 3, 3,
-                "Музей Ижмаш", description.izhmash,
-                "https://pro-dachnikov.com/uploads/posts/2021-11/1637834930_45-pro-dachnikov-com-p-sakura-foto-46.jpg")
+            new MarkerData(53.191212, 56.843837, 2, 0, 1, "Р“Р»Р°РІРЅС‹Р№ РєРѕСЂРїСѓСЃ", description.main_corp, photoData[0]),
+            new MarkerData(53.197900, 56.846705, 1, 1, 2, "Р“РµРЅРµСЂР°Р»СЊСЃРєРёР№ РґРѕРј", description.general_house, photoData[1]),
+            new MarkerData(53.198576, 56.844027, 0, 2, 3, "РњРёС…Р°Р№Р»РѕРІСЃРєР°СЏ РєРѕР»РѕРЅРЅР°", description.column, photoData[2]),
+            new MarkerData(53.198057, 56.843916, 3, 3, 3, "РњСѓР·РµР№ РР¶РњР°С€", description.izhmash, photoData[3]),
         };
        
         if (popup == null)
@@ -35,6 +30,5 @@ public class MarkerManager : MonoBehaviour
     {
         if (markerManager == null)
             markerManager = GetComponent<OnlineMapsMarkerManager>();
-
     }
 }

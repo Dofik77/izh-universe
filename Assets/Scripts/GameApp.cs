@@ -18,6 +18,9 @@ namespace DefaultNamespace
         [Header("Delay for App")] 
         [SerializeField] private float delayForStartScreens;
 
+        [Header("Delay for App")] [SerializeField]
+        private ModelStorage modelStorage;
+
         private void Start()
         {
             foreach (var button in appButton)
@@ -29,7 +32,10 @@ namespace DefaultNamespace
 
         private void ChangeScreen(UIScreenStateEnum currentState, 
             UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState, bool mapNeedToBeActivated = false)
-        {   
+        {
+            if(NextState == UIScreenStateEnum.ShowModelScreen)
+                modelStorage.InitializeModel();
+            
             switch (buttonPurposeState)
             {
                 case ButtonPurposeState.Next :
