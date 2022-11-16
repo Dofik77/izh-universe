@@ -20,6 +20,8 @@ public class UiStateMachine : MonoBehaviour
     [SerializeField] private float delayForTransition = 1.4f;
 
     [Header("Map")] [SerializeField] private OnlineMaps map;
+
+    [Header("Canvas Camera")] [SerializeField] private Camera canvasCamera;
     
 
     private Stack<UIScreenStateEnum> stackScreenStateName = new Stack<UIScreenStateEnum>();
@@ -73,8 +75,8 @@ public class UiStateMachine : MonoBehaviour
                 break;
             
             case UIScreenStateEnum.ShowModelScreen :
-                map.gameObject.SetActive(false);
                 screens.Find(x => x.WindowState == UIScreenStateEnum.ShowModelScreen).gameObject.SetActive(true);
+                map.gameObject.SetActive(false);
                 break;
             
             default: 
