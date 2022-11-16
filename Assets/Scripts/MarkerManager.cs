@@ -1,3 +1,4 @@
+using Assets.Scripts.Models;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,18 +9,23 @@ public class MarkerManager : MonoBehaviour
     [SerializeField, Tooltip("Markers")] private List<MarkerData> data;
     private void Awake()
     {
+        MarkerDataSharedDescription description = new MarkerDataSharedDescription();
+
         data = new List<MarkerData>{
-            new MarkerData(56.8441905225239, 53.2011340885793, 0, 1, 1,
-                "Marker 1", "Marker 1 - Description",
+            new MarkerData(53.191212, 56.843837, 2, 1, 1,
+                "Главный корпус оружейного завода", description.main_corp,
                 "https://i.ytimg.com/vi/WUqtMRXR3Bk/maxresdefault.jpg"),
-            new MarkerData(56.8496014366944, 53.2052574474073, 1, 2, 2,
-                "Marker 2", "Marker 2 - Description",
+            new MarkerData(53.197900, 56.846705, 1, 2, 2,
+                "Генеральский дом", description.general_house,
                 "https://upload.wikimedia.org/wikipedia/commons/0/06/KFC_Home_Base.jpg"),
-            new MarkerData(56.8380977056658, 53.196849051651, 2, 3, 3,
-                "Marker 3", "Marker 3 - Description", 
+            new MarkerData(53.198576, 56.844027, 0, 3, 3,
+                "Михайловская колонна", description.column, 
+                "https://pro-dachnikov.com/uploads/posts/2021-11/1637834930_45-pro-dachnikov-com-p-sakura-foto-46.jpg"),
+            new MarkerData(53.198057, 56.843916, 3, 3, 3,
+                "Музей Ижмаш", description.izhmash,
                 "https://pro-dachnikov.com/uploads/posts/2021-11/1637834930_45-pro-dachnikov-com-p-sakura-foto-46.jpg")
         };
-
+       
         if (popup == null)
             popup = GetComponent<MarkerShirtDetails>();
 

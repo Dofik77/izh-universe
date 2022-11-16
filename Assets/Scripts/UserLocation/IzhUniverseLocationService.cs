@@ -20,7 +20,7 @@ public class IzhUniverseLocationService : MonoBehaviour
         locationService.OnCompassChanged += OnCompassChanged;
         
         #if (UNITY_EDITOR)
-        userMarker.position = new Vector2(56.849894f, 53.223785f);
+        userMarker.position = new Vector2(53.223785f, 56.849894f);
         #endif
 
         OnlineMaps.instance.SetPositionAndZoom(userMarker.position.x, userMarker.position.y, 12);

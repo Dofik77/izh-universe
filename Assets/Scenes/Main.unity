@@ -1225,11 +1225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStopUpdateOnInput: 1
   compassThreshold: 8
-  createMarkerInUserPosition: 1
+  createMarkerInUserPosition: 0
   disableEmulatorInPublish: 0
   emulatorCompass: 0
   emulatorPosition: {x: 0, y: 0}
-  findLocationByIP: 1
+  findLocationByIP: 0
   lerpCompassValue: 1
   markerScale: 1
   markerTooltip: 
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   trueHeading: 0
   updatePosition: 0
   useCompassForMarker: 1
-  useGPSEmulator: 1
+  useGPSEmulator: 0
   desiredAccuracy: 1
   requestPermissionRuntime: 1
   updateDistance: 1
@@ -3125,7 +3125,7 @@ MonoBehaviour:
   - {fileID: 1745961035}
   delayForTransition: 1.4
   map: {fileID: 532925375}
-  canvasCamera: {fileID: 985343209}
+  canvasCamera: {fileID: 0}
 --- !u!1 &1630113056
 GameObject:
   m_ObjectHideFlags: 0
