@@ -2961,7 +2961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1409561216
 Transform:
   m_ObjectHideFlags: 0
@@ -3704,7 +3704,6 @@ GameObject:
   - component: {fileID: 1740226788}
   - component: {fileID: 1740226787}
   - component: {fileID: 1740226786}
-  - component: {fileID: 1740226785}
   m_Layer: 0
   m_Name: Close3DShowModel (1)
   m_TagString: Untagged
@@ -3726,28 +3725,11 @@ RectTransform:
   m_Father: {fileID: 1745961034}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -105}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 90}
   m_SizeDelta: {x: 88, y: 105.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1740226785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740226783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d71e5262a41413fba85d05c12f2b26b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 7
-  nextState: 0
-  buttonPurposeState: 1
-  thisButton: {fileID: 1740226786}
-  mapNeedToBeActivated: 1
 --- !u!114 &1740226786
 MonoBehaviour:
   m_ObjectHideFlags: 0
