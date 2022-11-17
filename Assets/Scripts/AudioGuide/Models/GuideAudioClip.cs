@@ -9,5 +9,6 @@ using UnityEngine;
 public class GuideAudioClip : ScriptableObject
 {
     public AudioClip audioClip;
+    public string audioClipName;
     public List<GuideTimecode> timecodes;
 }

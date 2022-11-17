@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: "\u043C\u0438\u0445. \u043A\u043E\u043B"
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 1b8585c5564ac8841b2ecaa03f24f944, type: 3}
+  audioClipName: "\u041C\u0438\u0445\u0430\u0439\u043B\u043E\u0432\u0441\u043A\u0430\u044F
+    \u043A\u043E\u043B\u043E\u043D\u043D\u0430"
   timecodes:
   - start: 0
     end: 30

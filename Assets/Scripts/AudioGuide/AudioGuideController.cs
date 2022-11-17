@@ -90,7 +90,7 @@ public class AudioGuideController : MonoBehaviour
         guideTimecodes = currentClip.timecodes;
 
         audioGuideSource.clip = currentClip.audioClip;
-        SetTrackNameText(currentClip.audioClip);
+        SetTrackNameText(currentClip.audioClipName);
         SetSliderLenght();
         ResetTimeline();
         DestroyEdges();
@@ -147,10 +147,10 @@ public class AudioGuideController : MonoBehaviour
     /// Задаём текстовому полю значение названия трека
     /// </summary>
     /// <param name="clip">Трек</param>
-    private void SetTrackNameText(AudioClip clip)
+    private void SetTrackNameText(string clipName)
     {
         if (trackName == null) return;
-        trackName.text = clip.name;
+        trackName.text = clipName;
     }
 
     private void SetChapterNameText(List<GuideTimecode> guideTimecodes)

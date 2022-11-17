@@ -36,7 +36,7 @@ public class MarkerShirtDetails : MonoBehaviour
     private void OnDetailsClick(MarkerData data)
     {
         argumentsHandler.SetArgs(data);
-        MarkerShirt.SetActive(false);
+        OnMapClick();
         
         //re-write to GameApp logic fill data 
     }
