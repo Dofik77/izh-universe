@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UIScreenStateEnum = UIScreenStateClass.UIScreenStateEnum;
 using ButtonPurposeState = ButtonPurpose.ButtonPurposeState;
+using Orientation = OrientationSetter.Orientation;
 
 namespace DefaultNamespace
 {
@@ -14,12 +15,12 @@ namespace DefaultNamespace
 
         [Header("App Button")] 
         [SerializeField] private List<ButtonHandler> appButton = new List<ButtonHandler>();
-
+        
         [Header("Delay for App")] 
-        [SerializeField] private float delayForStartScreens;
+        [SerializeField] private ModelStorage modelStorage;
 
-        [Header("Delay for App")] [SerializeField]
-        private ModelStorage modelStorage;
+        [Header("Orientation")] 
+        [SerializeField] private OrientationSetter orientationSetter;
 
         private void Start()
         {
@@ -33,8 +34,11 @@ namespace DefaultNamespace
         private void ChangeScreen(UIScreenStateEnum currentState, 
             UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState, bool mapNeedToBeActivated = false)
         {
-            if(NextState == UIScreenStateEnum.ShowModelScreen)
+            if (NextState == UIScreenStateEnum.ShowModelScreen)
                 modelStorage.InitializeModel();
+            
+            if (currentState == UIScreenStateEnum.ShowModelScreen && buttonPurposeState == ButtonPurposeState.Back)
+                orientationSetter.ChangeOrientation(Orientation.PortraitFixed);
             
             switch (buttonPurposeState)
             {

@@ -107,7 +107,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d710c66e2c633284d9530b6de911a8c2, type: 3}
   - {fileID: 21300000, guid: d725ef9eb7ab43b48b4dc01211d1b23b, type: 3}
   - {fileID: 21300000, guid: 161932aece54c144897b35722aa50d5a, type: 3}
-  - {fileID: 21300000, guid: 5b511b0fe1a948d41a647ea9af26e9a5, type: 3}
+  - {fileID: -4749140598178888764, guid: 5b511b0fe1a948d41a647ea9af26e9a5, type: 3}
+  - {fileID: 6259983639586318526, guid: 5b511b0fe1a948d41a647ea9af26e9a5, type: 3}
+  - {fileID: -8122164587498115561, guid: 5b511b0fe1a948d41a647ea9af26e9a5, type: 3}
   - {fileID: 21300000, guid: 87c05f1f7f79995449548b4ace9c3d5a, type: 3}
   - {fileID: 21300000, guid: 3496673f5b1f79c4c8e5dfbf3bf5a35a, type: 3}
   - {fileID: 21300000, guid: a680183f0c4458345875eb8fbe6a15f7, type: 3}
@@ -162,7 +164,9 @@ SpriteAtlas:
   - Avatar(White)
   - ListenAudioButtonSprite
   - info(black)
-  - slider
+  - slider_1
+  - slider_0
+  - slider_2
   - Group 53
   - explore(black)
   - IzhLiveButton

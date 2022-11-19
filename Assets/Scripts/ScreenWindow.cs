@@ -8,3 +8,4 @@ public class ScreenWindow : MonoBehaviour
 {
     public UIScreenStateClass.UIScreenStateEnum WindowState;
 }
+
