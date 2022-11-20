@@ -73,6 +73,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: eb516872ef235f049af0f09f286ef0ac, type: 3}
   - {fileID: 21300000, guid: 5ce06b72aa092b046aa745d8415b91f1, type: 3}
   - {fileID: 21300000, guid: 93bd66b217580124f824e770fff0c557, type: 3}
+  - {fileID: 21300000, guid: 90daa3d2ee121c443b4a212f10f3cead, type: 3}
   - {fileID: 21300000, guid: 4a7807f261b5d284ebee3a2069d1c560, type: 3}
   - {fileID: 21300000, guid: d26131239339cbf41be9bc5164d21fa9, type: 3}
   - {fileID: 21300000, guid: cb648373544ec0645a66d0fa885b4da5, type: 3}
@@ -93,6 +94,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 221e6fbaf6b7b6440a42e368ec59d59f, type: 3}
   - {fileID: 21300000, guid: a268a70b3e9629d49b8abc828a58f6c2, type: 3}
   - {fileID: 21300000, guid: f6079d2b9339fe944b4f61b416918caf, type: 3}
+  - {fileID: 21300000, guid: 6f364f9b78abe9642ba908b71785bfe8, type: 3}
   - {fileID: 21300000, guid: f3f9ca1ca99fd754ab339d0c064c5c35, type: 3}
   - {fileID: 21300000, guid: bc5771ec2823feb47a11b43b11acc486, type: 3}
   - {fileID: 21300000, guid: 0e138f0d189896943aa8cd71a508403e, type: 3}
@@ -128,6 +130,7 @@ SpriteAtlas:
   - avatar
   - "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C"
   - BackButtonSprite
+  - "\u041C\u041E\u0419"
   - Main Background
   - Best(white)
   - Group 56
@@ -150,6 +153,7 @@ SpriteAtlas:
   - heart
   - Profile(black)
   - IzhHistoryButton
+  - "\u0418\u0416\u0415\u0412\u0421\u041A"
   - vrButton(black)
   - 3d button
   - Rectangle white
