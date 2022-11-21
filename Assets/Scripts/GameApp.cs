@@ -63,10 +63,10 @@ namespace DefaultNamespace
                 arModelManager.gameObject.SetActive(false);
 
             if (NextState == UIScreenStateEnum.ShowModelScreen)
-                modelManager.InitializeModel();
+                modelManager.ModelManagerInitialize();
 
             if (NextState == UIScreenStateEnum.ShowARScreen)
-                arModelManager.ARInitialize();
+                arModelManager.ARManagerInitialize();
             
             if (currentState == UIScreenStateEnum.ShowModelScreen && buttonPurposeState == ButtonPurposeState.Back)
                 orientationSetter.ChangeOrientation(Orientation.PortraitFixed);
