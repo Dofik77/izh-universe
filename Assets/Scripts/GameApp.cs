@@ -10,20 +10,28 @@ namespace DefaultNamespace
 {
     public class GameApp : MonoBehaviour
     {
+        [Header("Map")] 
+        [SerializeField] private OnlineMaps map;
+
         [Header("Initial Algoritm")]
         [SerializeField] private UiStateMachine uiStateMachine;
 
         [Header("App Button")] 
         [SerializeField] private List<ButtonHandler> appButton = new List<ButtonHandler>();
         
-        [Header("Delay for App")] 
-        [SerializeField] private ModelStorage modelStorage;
+        [Header("Model Manager")] 
+        [SerializeField] private ModelManager modelManager;
 
+        [Header("AR Manager")] 
+        [SerializeField] private ARModelManager arModelManager;
+        
         [Header("Orientation")] 
         [SerializeField] private OrientationSetter orientationSetter;
 
         private void Start()
         {
+            map.gameObject.SetActive(true);
+            
             foreach (var button in appButton)
                 button.OnButtonClick += ChangeScreen;
 
@@ -34,11 +42,7 @@ namespace DefaultNamespace
         private void ChangeScreen(UIScreenStateEnum currentState, 
             UIScreenStateEnum NextState, ButtonPurposeState buttonPurposeState, bool mapNeedToBeActivated = false)
         {
-            if (NextState == UIScreenStateEnum.ShowModelScreen)
-                modelStorage.InitializeModel();
-            
-            if (currentState == UIScreenStateEnum.ShowModelScreen && buttonPurposeState == ButtonPurposeState.Back)
-                orientationSetter.ChangeOrientation(Orientation.PortraitFixed);
+            CheckСrutchCase(NextState, currentState, buttonPurposeState);
             
             switch (buttonPurposeState)
             {
@@ -50,6 +54,22 @@ namespace DefaultNamespace
                     uiStateMachine.BackScreen(currentState, mapNeedToBeActivated);
                     break;
             }
+        }
+
+
+        private void CheckСrutchCase(UIScreenStateEnum NextState, UIScreenStateEnum currentState, ButtonPurposeState buttonPurposeState)
+        {
+            if(NextState != UIScreenStateEnum.ShowARScreen)
+                arModelManager.gameObject.SetActive(false);
+
+            if (NextState == UIScreenStateEnum.ShowModelScreen)
+                modelManager.InitializeModel();
+
+            if (NextState == UIScreenStateEnum.ShowARScreen)
+                arModelManager.ARInitialize();
+            
+            if (currentState == UIScreenStateEnum.ShowModelScreen && buttonPurposeState == ButtonPurposeState.Back)
+                orientationSetter.ChangeOrientation(Orientation.PortraitFixed);
         }
         
         

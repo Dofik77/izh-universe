@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class ModelStorage : MonoBehaviour
+    public class ModelManager : MonoBehaviour
     {
         [SerializeField] private ModelSO models;
         [SerializeField] private Transform ModelPos;

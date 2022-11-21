@@ -6,6 +6,4 @@ using UnityEngine;
 public class ModelSO : ScriptableObject
 {
     [SerializeField] public List<GameObject> Model;
-    
-    
 }

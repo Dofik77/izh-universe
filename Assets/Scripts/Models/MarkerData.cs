@@ -13,7 +13,7 @@ public class MarkerData
     public int audioClipId;
     public int modelId;
     
-    public MarkerData(double longitude, double latitude, int audioClipId, int modelId, 
+    public MarkerData(double longitude, double latitude, int audioClipId, int modelId, int ArID,
         int id = 0, string label = "", string description = "", PhotoSO SO = null)
     {
         this.id = id;

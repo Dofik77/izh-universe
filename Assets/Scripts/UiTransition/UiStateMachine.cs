@@ -79,6 +79,11 @@ public class UiStateMachine : MonoBehaviour
                 map.gameObject.SetActive(false);
                 break;
             
+            case UIScreenStateEnum.ShowARScreen :
+                screens.Find(x => x.WindowState == UIScreenStateEnum.ShowARScreen).gameObject.SetActive(true);
+                map.gameObject.SetActive(false);
+                break;
+            
             default: 
                 break;
         }
@@ -109,7 +114,8 @@ public class UiStateMachine : MonoBehaviour
             MainMenuOnMapScreen,
             ShirtDetailsScreen,
             AudioGuideScreen,
-            ShowModelScreen
+            ShowModelScreen,
+            ShowARScreen
         }
     }
     
