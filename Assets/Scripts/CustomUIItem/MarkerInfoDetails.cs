@@ -16,14 +16,6 @@ public class MarkerInfoDetails : MonoBehaviour
     private ArgumentsHandler<int> argumentsHandlerModelData;
     private MarkerData lastMarkerData;
 
-    private void OnDownloadPhotoComplete(OnlineMapsWWW www)
-    {
-        Texture2D texture = new Texture2D(1, 1);
-        www.LoadImageIntoTexture(texture);
-
-        Photo.texture = texture;
-    }
-
     public void FillFields(MarkerData data)
     {
         MarkerDetailsName.text = data.label;
@@ -31,7 +23,6 @@ public class MarkerInfoDetails : MonoBehaviour
 
         if (Photo.texture != null)
         {
-            OnlineMapsUtils.Destroy(Photo.texture);
             Photo.texture = null;
         }
 
@@ -40,9 +31,6 @@ public class MarkerInfoDetails : MonoBehaviour
         audioId = data.audioClipId;
         
         argumentsHandlerModelData.SetArgs(data.modelId);
-
-        // OnlineMapsWWW www = new OnlineMapsWWW(data.image_uri);
-        // www.OnComplete += OnDownloadPhotoComplete;
     }
     
     private void SetupGuide()
@@ -54,7 +42,6 @@ public class MarkerInfoDetails : MonoBehaviour
     {
         argumentsHandlerModelData = ArgumentsHandler<int>.GetInstance();
         argumentsHandler = ArgumentsHandler<MarkerData>.GetInstance();
-        //closeBtn.onClick.AddListener(() => CloseOnClick());
         AudioGuideBtn.onClick.AddListener(() => SetupGuide());
     }
 

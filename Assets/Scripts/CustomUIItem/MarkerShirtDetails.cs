@@ -18,14 +18,6 @@ public class MarkerShirtDetails : MonoBehaviour
     private OnlineMapsMarker targetMarker;
     private ArgumentsHandler<MarkerData> argumentsHandler;
 
-    private void OnDownloadPhotoComplete(OnlineMapsWWW www)
-    {
-        Texture2D texture = new Texture2D(1, 1);
-        www.LoadImageIntoTexture(texture);
-
-        ShirtPhoto.texture = texture;
-    }
-
     private void OnMapClick()
     {
         targetMarker = null;
@@ -55,15 +47,10 @@ public class MarkerShirtDetails : MonoBehaviour
         
         if (ShirtPhoto.texture != null)
         {
-            OnlineMapsUtils.Destroy(ShirtPhoto.texture);
             ShirtPhoto.texture = null;
         }
 
         ShirtPhoto.texture = data.SO.ShirtPhoto;
-        
-        // OnlineMapsWWW www = new OnlineMapsWWW(data.);
-        // www.OnComplete += OnDownloadPhotoComplete;
-
         UpdateBubblePosition();
     }
 
